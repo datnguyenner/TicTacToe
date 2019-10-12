@@ -1,0 +1,9 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": "https://vc-see.anonymous.tictactoe.exp.direct",
+  "packagerNgrokUrl": "https://packager.vc-see.anonymous.tictactoe.exp.direct",
+  "ngrokPid": 7033
+}
