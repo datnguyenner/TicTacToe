@@ -3,8 +3,11 @@
 This app was built using React Native Expo.  Please install Expo first before running this app.
 
 npm install -g expo-cli
+
 git clone https://github.com/datnguyenner/TicTacToe.git
+
 cd TicTacToe
+
 npm start
 
 You can also run this using the expo web client.
