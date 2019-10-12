@@ -8,6 +8,8 @@ git clone https://github.com/datnguyenner/TicTacToe.git
 
 cd TicTacToe
 
+npm install
+
 npm start
 
 You can also run this using the expo web client.
