@@ -8,7 +8,7 @@ export default class App extends Component {
     super(props);
     this.state = {
       gameBoard: [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
-      currentPlayer: 1,
+      currentPlayer: 1, //The Game will always start with player 1 (X)
       player1Score: 0,
       player2Score: 0,
       enabled: false
@@ -18,7 +18,6 @@ export default class App extends Component {
   restartRound = () => {
     this.setState({
       gameBoard: [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
-      currentPlayer: 1,
       enabled: false
     })
   }
@@ -30,7 +29,7 @@ export default class App extends Component {
       player1Score: 0,
       player2Score: 0,
       enabled: false
-    })
+    });
   }
 
   playerMove = (row, col) => {
@@ -114,9 +113,9 @@ export default class App extends Component {
 
         <View tyle={{ alignItems: 'center' }}>
           <View style={styles.row}>
-            <Text style={styles.x}>X=</Text>
+            <Text style={this.state.currentPlayer === 1 ? styles.xL : styles.x}>X=</Text>
             <Text style={styles.score}>{this.state.player1Score}</Text>
-            <Text style={[styles.o, { marginLeft: 20 }]}>O=</Text>
+            <Text style={[this.state.currentPlayer === -1 ? styles.oL : styles.o, {marginLeft: 20}]}>O=</Text>
             <Text style={styles.score}>{this.state.player2Score}</Text>
           </View>
         </View>
@@ -154,8 +153,18 @@ const styles = StyleSheet.create({
     fontSize: 80,
     color: 'red'
   },
+  xL: {
+    fontSize: 80,
+    fontWeight: 'bold',
+    color: 'red'
+  },
   o: {
     fontSize: 80,
+    color: 'blue'
+  },
+  oL: {
+    fontSize: 80,
+    fontWeight: 'bold',
     color: 'blue'
   },
   score: {
