@@ -72,7 +72,7 @@ export default class App extends Component {
 
     const columns = row.map((col, colIndex) => {
       return (
-        <TouchableOpacity key={i} style={[styles.square, cellBorders[rowIndex][colIndex]]} onPress={this.playerMove.bind(this, rowIndex, colIndex)} disabled={this.state.enabled}>
+        <TouchableOpacity key={colIndex} style={[styles.square, cellBorders[rowIndex][colIndex]]} onPress={this.playerMove.bind(this, rowIndex, colIndex)} disabled={this.state.enabled}>
           {this.renderIcon(rowIndex, colIndex)}
         </TouchableOpacity>
       );
