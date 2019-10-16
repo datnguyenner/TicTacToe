@@ -1,3 +1,4 @@
+//With comments
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import getWinner from './utils';
