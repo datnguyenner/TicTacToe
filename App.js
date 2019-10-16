@@ -8,7 +8,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      gameBoard: [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
+      gameBoard: [[0, 0, 0], [0, 0, 0], [0, 0, 0]], // this is being used in 3 places. Make a one time variable and re-instantiate it.
       currentPlayer: 1, //The Game will always start with player 1 (X)
       player1Score: 0,
       player2Score: 0,
@@ -61,7 +61,7 @@ export default class App extends Component {
   }
 
   renderIcon = (row, col) => {
-    const playerMove = this.state.gameBoard[row][col];
+    const playerMove = this.state.gameBoard[row][col];  // dont use switch case if there are only 2 conditions
     switch (playerMove) {
       case 1: return <Text style={styles.x}>X</Text>;
       case -1: return <Text style={styles.o}>O</Text>;
@@ -71,7 +71,8 @@ export default class App extends Component {
   }
 
   render() {
-
+    // This board can be generated 3x with some map code.
+    // there are some styles are are written inline like borderLeftWidth, should these be put in the styles const?
     return (
       <View style={styles.container} >
         <View>
@@ -86,7 +87,7 @@ export default class App extends Component {
               {this.renderIcon(0, 2)}
             </TouchableOpacity>
           </View>
-
+          
           <View style={styles.row}>
             <TouchableOpacity style={[styles.square, { borderLeftWidth: 0 }]} onPress={() => this.playerMove(1, 0)} disabled={this.state.enabled}>
               {this.renderIcon(1, 0)}
@@ -151,7 +152,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   x: {
-    fontSize: 80,
+    fontSize: 80, // font size is being used many times. make a variable for it.
     color: 'red'
   },
   xL: {
