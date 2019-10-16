@@ -1,4 +1,4 @@
-export default getWinner = (gameBoard) => {
+const getWinner = (gameBoard) => {
 
     //Check row and column for winner
     for (let i = 0; i < 3; i++) {
@@ -17,14 +17,28 @@ export default getWinner = (gameBoard) => {
     return false;
 }
 
-alertWinner = (sum) => {
+const alertWinner = (sum) => {
 
-    switch (sum) {
-        case 3: alert('Player 1 is the winner!');
-            return true;
-        case -3: alert('Player 2 is the winner!');
-            return true;
-        default:
-            return false;
+    if (sum === 3) {
+        alert('Player 1 is the winner!');
+        return true;
+    }
+    if (sum === -3) {
+        alert('Player 2 is the winner!');
+        return true;
+    }
+
+    return false;
+}
+
+const getNewGameBoard = () => {
+    return {
+        gameBoard: [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
+        currentPlayer: 1,
+        player1Score: 0,
+        player2Score: 0,
+        enabled: false
     }
 }
+
+export { getWinner, getNewGameBoard };
