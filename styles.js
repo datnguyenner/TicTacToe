@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const fontSize = 80;
+const iconTextSize = 80;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -19,20 +19,20 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     x: {
-        fontSize: fontSize,
+        fontSize: iconTextSize,
         color: 'red'
     },
     xL: {
-        fontSize: fontSize,
+        fontSize: iconTextSize,
         fontWeight: 'bold',
         color: 'red'
     },
     o: {
-        fontSize: fontSize,
+        fontSize: iconTextSize,
         color: 'blue'
     },
     oL: {
-        fontSize: fontSize,
+        fontSize: iconTextSize,
         fontWeight: 'bold',
         color: 'blue'
     },
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     score: {
-        fontSize: fontSize,
+        fontSize: iconTextSize,
     },
     scoreMargin: {
         marginLeft: 20
