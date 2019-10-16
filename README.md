@@ -10,7 +10,7 @@ cd TicTacToe<br/>
 npm install<br/>
 npm start<br/>
 
-You can also run this using the expo web client. https://snack.expo.io/@datguy1989/8cfd9c<br/>
+You can also run this using the expo web client. https://snack.expo.io/@datguy1989/tic-tac-toe<br/>
 
 Constraints:<br/>
 -Both players will start out with 0 points<br/>
