@@ -58,10 +58,10 @@ export default class App extends Component {
 
   renderBoard() {
 
-    const rows = this.state.gameBoard.map((row, i) => {
+    const rows = this.state.gameBoard.map((row, rowIndex) => {
       return (
-        <View key={i} style={styles.row}>
-          {this.renderColumns(row, i)}
+        <View key={rowIndex} style={styles.row}>
+          {this.renderColumns(row, rowIndex)}
         </View>)
     });
 
@@ -70,10 +70,10 @@ export default class App extends Component {
 
   renderColumns(row, rowIndex) {
 
-    const columns = row.map((col, i) => {
+    const columns = row.map((col, colIndex) => {
       return (
-        <TouchableOpacity key={i} style={[styles.square, cellBorders[rowIndex][i]]} onPress={this.playerMove.bind(this, rowIndex, i)} disabled={this.state.enabled}>
-          {this.renderIcon(rowIndex, i)}
+        <TouchableOpacity key={i} style={[styles.square, cellBorders[rowIndex][colIndex]]} onPress={this.playerMove.bind(this, rowIndex, colIndex)} disabled={this.state.enabled}>
+          {this.renderIcon(rowIndex, colIndex)}
         </TouchableOpacity>
       );
     })

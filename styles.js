@@ -57,4 +57,3 @@ const cellBorders = [
 ];
 
 export { styles, cellBorders }
-
